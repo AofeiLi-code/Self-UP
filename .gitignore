@@ -1,0 +1,42 @@
+# 环境变量（包含密钥，绝对不能提交）
+.env
+
+# 数据库文件
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# 用户上传的图片
+backend/uploads/
+
+# 前端构建产物
+frontend/dist/
+frontend/.vite/
+
+# 依赖
+node_modules/
+
+# macOS
+.DS_Store
+
+# Claude Code 工作区（含对话历史，不应提交）
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ngrok
+*.ngrok.yml

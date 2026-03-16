@@ -1,0 +1,131 @@
+# sects/lianti_zong.yaml
+# 炼体宗 · v0.2 首发门派
+
+meta:
+  id: lianti_zong
+  name: 炼体宗
+  tagline: "以肉身为炉，千锤百炼，方成大道"
+  description: >
+    炼体宗认为，修仙之基在于肉身。
+    意志再强，若无强健体魄为载体，终是镜中花水中月。
+    本宗修士以健身、体能训练为核心功课，辅以饮食调养。
+  focus:
+    - 健身
+    - 体能
+    - 饮食
+  difficulty: 中等
+  recommended_for: "想改变体型、建立运动习惯的修士"
+  version: "1.0.0"
+  maintainer: "Self-UP官方"
+
+# 加入门派后自动添加的功法
+techniques:
+  - name: 淬体大法
+    real_task: 每日健身或运动30分钟以上
+    scheduled_time: "18:00"
+    spiritual_energy_reward: 80
+  - name: 饮食清规
+    real_task: 记录今日饮食，避免垃圾食品
+    scheduled_time: "12:00"
+    spiritual_energy_reward: 30
+
+# 门派资源库
+resources:
+  - id: res_001
+    title: 零基础健身入门指南
+    type: article
+    content: >
+      修炼第一周，不求重量，只求动作标准。
+      推荐动作：俯卧撑、深蹲、平板支撑，每日各三组。
+      每组之间休息60秒，循序渐进，切勿急于求成。
+      第一周完成后，可逐步增加组数或引入哑铃训练。
+    unlock_realm: 练气期
+
+  - id: res_002
+    title: Jeff Nippard科学健身系列合集（B站）
+    type: video_link
+    url: "https://www.bilibili.com/video/BV1Qt411a7mz/?share_source=copy_web&vd_source=46c4c2a4e955df6ad378990c63d2867a"
+    description: "目前B站最系统的科学健身内容，每期有中文字幕"
+    unlock_realm: 筑基期
+
+  - id: res_003
+    title: 炼体宗每周修炼计划表
+    type: schedule
+    content:
+      monday: "胸+三头，淬体大法第一课"
+      tuesday: "跑步30分钟，吐纳功·进阶版"
+      wednesday: "休息日，静心功即可"
+      thursday: "背+二头，淬体大法第二课"
+      friday: "腿部训练，最难但最重要"
+      saturday: "自由训练或有氧"
+      sunday: "休息，悟道复盘"
+    unlock_realm: 练气期
+
+# 门派推送计划（加入门派后第N天触发）
+push_schedule:
+  - day: 1
+    time: "09:00"
+    message: "宿主，欢迎加入炼体宗。今日起，你的肉身将是你最强的法器。"
+  - day: 3
+    message: "前三日最难熬。坚持过今天，道心便稳了一分。"
+  - day: 7
+    message: "七日淬炼，筋骨初动。宿主，你已胜过大多数人了。"
+  - day: 14
+    message: "两周，习惯已开始生根。此后修炼，将事半功倍。"
+  - day: 30
+    message: "三十日，一个境界。炼体宗为你的坚持，致以最高敬意。"
+
+# 门派任务列表
+# type: long_term（长期任务） | seasonal（季节限定）
+# reward_title 不为空 = 特别任务（需正式拜入方可完成）
+quests:
+  - id: q_first_training
+    title: 初次淬炼
+    description: 完成第一次修炼打卡，踏上炼体之路
+    type: long_term
+    reward_spiritual_energy: 50
+    reward_title: null
+    completion_criteria:
+      type: checkin_count
+      target: 1
+
+  - id: q_30_training
+    title: 月锻体魄
+    description: 累计修炼30天，打磨基础体质
+    type: long_term
+    reward_spiritual_energy: 200
+    reward_title: null
+    completion_criteria:
+      type: total_days
+      target: 30
+
+  - id: q_100_training
+    title: 百日筑基
+    description: 累计修炼100天，铸就炼体根基
+    type: long_term
+    reward_spiritual_energy: 500
+    reward_title: null
+    completion_criteria:
+      type: total_days
+      target: 100
+
+  - id: q_iron_body
+    title: 铁体境界
+    description: 保持连续修炼30天，铸就铁打之躯，获得专属称号
+    type: long_term
+    reward_spiritual_energy: 300
+    reward_title: 铁体修士
+    completion_criteria:
+      type: streak_days
+      target: 30
+
+# 门派境界专属称号（覆盖默认境界显示）
+realm_titles:
+  练气期: "散修"
+  筑基期: "外门弟子"
+  金丹期: "内门弟子"
+  元婴期: "核心弟子"
+  化神期: "执事长老"
+  合体期: "宗门长老"
+  大乘期: "副宗主"
+  渡劫期: "宗主"

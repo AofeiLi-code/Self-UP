@@ -1,0 +1,134 @@
+# sects/ningjing_zong.yaml
+# 凝神宗 · v0.2 首发门派
+
+meta:
+  id: ningjing_zong
+  name: 凝神宗
+  tagline: "心若止水，息定则神凝，神凝则道成"
+  description: >
+    凝神宗认为，万法归宗于一个「静」字。
+    现代修士最大的劫数，不是懒惰，而是混乱失序的作息。
+    本宗以规律入眠、清晨吐纳为核心修课，
+    以心境平和为修炼基础，以科学睡眠法为入门秘籍。
+  focus:
+    - 早睡
+    - 早起
+    - 作息
+  difficulty: 入门
+  recommended_for: "想建立规律作息、改善睡眠质量、提升日间精力的修士"
+  version: "1.0.0"
+  maintainer: "Self-UP官方"
+
+# 加入门派后自动添加的功法
+techniques:
+  - name: 凝神功
+    real_task: 23:00前入睡，截图手机系统时间打卡
+    scheduled_time: "22:30"
+    spiritual_energy_reward: 40
+  - name: 吐纳功
+    real_task: 07:00前起床，开窗深呼吸五分钟
+    scheduled_time: "07:00"
+    spiritual_energy_reward: 30
+
+# 门派资源库
+resources:
+  - id: res_001
+    title: 睡眠科学入门：作息规律为何是修炼的基础
+    type: article
+    content: >
+      子时（23:00-1:00）是身体自我修复的黄金时段，此时入睡，修炼事半功倍。
+      核心法则三条：固定就寝时间（误差不超过30分钟）；
+      睡前一小时关闭屏幕，以白噪音或冥想代替刷手机；
+      保持卧室黑暗与凉爽（18-21°C为最佳）。
+      研究表明，连续21天规律作息后，生物钟将自动校准，
+      清晨无需闹钟即可醒来，精力较混乱作息提升约40%。
+    unlock_realm: 练气期
+
+  - id: res_002
+    title: Lofi Girl·学习与睡眠白噪音（YouTube直播）
+    type: video_link
+    url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+    description: "全球最著名的白噪音频道，7×24小时直播，助眠与专注均适用，无广告打扰"
+    unlock_realm: 练气期
+
+  - id: res_003
+    title: 凝神宗每周作息修炼计划表
+    type: schedule
+    content:
+      monday: "22:30熄灯，入睡前默数呼吸二十次，放空杂念"
+      tuesday: "晨起吐纳，日出前完成五分钟深呼吸，感受气息流动"
+      wednesday: "中段调整日，午间小憩不超过20分钟，保护夜间睡意"
+      thursday: "坚守作息，进阶：尝试冥想引导入眠，专注呼吸"
+      friday: "周末前夕最易破功，道心须坚，提前一小时准备入睡"
+      saturday: "弹性修炼日，但不得晚于00:00就寝，底线不可破"
+      sunday: "悟道复盘，回顾本周作息记录，记录睡眠感受与精力变化"
+    unlock_realm: 筑基期
+
+# 门派推送计划（加入门派后第N天触发）
+push_schedule:
+  - day: 1
+    time: "22:00"
+    message: "宿主，欢迎加入凝神宗。今夜子时前，请放下手机，让心归于静。第一夜，便是道心最初的试炼。"
+  - day: 3
+    message: "三日之功，生物钟已感受到宿主的意志。今夜莫要松懈，前三日最难，过了便是另一番天地。"
+  - day: 7
+    message: "七日入定，宿主的睡眠已悄然改变。本座观测数据：你的清晨，比入宗前更加清醒了。"
+  - day: 14
+    message: "两周凝神，规律已初成根基。数据不会说谎——此后修炼，将比旁人事半功倍。"
+  - day: 30
+    message: "三十日止水之功。凝神宗三百年来，能坚持至此者，寥寥无几。本座，为你的道心，致以最高敬意。"
+
+# 门派任务列表
+# type: long_term（长期任务） | seasonal（季节限定）
+# reward_title 不为空 = 特别任务（需正式拜入方可完成）
+quests:
+  - id: q_first_calm
+    title: 初定心神
+    description: 完成第一次凝神修炼打卡，迈出凝神第一步
+    type: long_term
+    reward_spiritual_energy: 30
+    reward_title: null
+    completion_criteria:
+      type: checkin_count
+      target: 1
+
+  - id: q_21_calm
+    title: 三旬凝气
+    description: 累计修炼21天，生物钟开始自我校准
+    type: long_term
+    reward_spiritual_energy: 150
+    reward_title: null
+    completion_criteria:
+      type: total_days
+      target: 21
+
+  - id: q_60_calm
+    title: 两月入定
+    description: 累计修炼60天，规律已深入骨髓
+    type: long_term
+    reward_spiritual_energy: 350
+    reward_title: null
+    completion_criteria:
+      type: total_days
+      target: 60
+
+  - id: q_still_water
+    title: 止水境界
+    description: 保持连续修炼21天，心如止水，获得专属称号
+    type: long_term
+    reward_spiritual_energy: 250
+    reward_title: 止水真人
+    completion_criteria:
+      type: streak_days
+      target: 21
+
+# 门派境界专属称号（覆盖默认境界显示，体现"心境平和"风格）
+realm_titles:
+  练气期: "散心客"
+  筑基期: "凝气学徒"
+  金丹期: "静心修士"
+  元婴期: "定神真人"
+  化神期: "凝神执事"
+  合体期: "清心长老"
+  大乘期: "无念副宗主"
+  渡劫期: "宗主"
