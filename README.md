@@ -84,7 +84,7 @@ Self-UP 是一款以修仙世界观包装的自律打卡应用。完成现实任
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/Self-UP.git
+git clone [https://github.com/你的用户名/Self-UP.git](https://github.com/AofeiLi-code/Self-UP.git)
 cd Self-UP
 ```
 
